@@ -1,8 +1,37 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { toast } from 'react-toastify'
+import { Howl } from 'howler'
 import ApperIcon from './ApperIcon'
 
+// Sound effects using data URLs for immediate functionality
+const sounds = {
+  wheelSpin: new Howl({
+    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz'],
+    volume: 0.3,
+    onloaderror: () => console.log('Wheel spin sound failed to load')
+  }),
+  ballLand: new Howl({
+    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz] }]',
+    volume: 0.5,
+    onloaderror: () => console.log('Ball land sound failed to load')
+  }),
+  chipPlace: new Howl({
+    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz] }]',
+    volume: 0.4,
+    onloaderror: () => console.log('Chip place sound failed to load')
+  }),
+  win: new Howl({
+    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz] }]',
+    volume: 0.6,
+    onloaderror: () => console.log('Win sound failed to load')
+  }),
+  lose: new Howl({
+    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz] }]',
+    volume: 0.4,
+    onloaderror: () => console.log('Lose sound failed to load')
+  })
+}
 const ROULETTE_NUMBERS = [
   { number: 0, color: 'green' },
   { number: 32, color: 'red' }, { number: 15, color: 'black' }, { number: 19, color: 'red' },
@@ -30,11 +59,18 @@ export default function MainFeature() {
   const [gameHistory, setGameHistory] = useState([])
   const [wheelRotation, setWheelRotation] = useState(0)
 
-  const placeBet = (betType, value) => {
+const placeBet = (betType, value) => {
     if (isSpinning) return
     if (balance < selectedChip) {
       toast.error('Insufficient balance!')
       return
+    }
+
+    // Play chip placement sound
+    try {
+      sounds.chipPlace.play()
+    } catch (error) {
+      console.log('Could not play chip sound:', error)
     }
 
     const betKey = `${betType}-${Array.isArray(value) ? value.join(',') : value}`
@@ -63,7 +99,7 @@ export default function MainFeature() {
     toast.info('All bets cleared')
   }
 
-  const spinWheel = () => {
+const spinWheel = () => {
     if (Object.keys(bets).length === 0) {
       toast.error('Place at least one bet!')
       return
@@ -71,6 +107,13 @@ export default function MainFeature() {
 
     setIsSpinning(true)
     setWinningNumber(null)
+    
+    // Play wheel spinning sound
+    try {
+      sounds.wheelSpin.play()
+    } catch (error) {
+      console.log('Could not play wheel spin sound:', error)
+    }
     
     // Random winning number
     const randomIndex = Math.floor(Math.random() * ROULETTE_NUMBERS.length)
@@ -85,6 +128,13 @@ export default function MainFeature() {
     setWheelRotation(finalRotation)
     
     setTimeout(() => {
+      // Play ball landing sound
+      try {
+        sounds.ballLand.play()
+      } catch (error) {
+        console.log('Could not play ball land sound:', error)
+      }
+      
       setWinningNumber(winner)
       calculateWinnings(winner)
       setIsSpinning(false)
@@ -154,14 +204,26 @@ export default function MainFeature() {
       totalWon: totalWinnings,
       timestamp: new Date()
     }])
+}])
 
     // Clear bets
     setBets({})
 
     if (totalWinnings > 0) {
+      try {
+        sounds.win.play()
+      } catch (error) {
+        console.log('Could not play win sound:', error)
+      }
       toast.success(`🎉 You won $${totalWinnings}!`)
     } else {
-      toast.error('No winning bets this round')
+      // Play lose sound
+      try {
+        sounds.lose.play()
+      } catch (error) {
+        console.log('Could not play lose sound:', error)
+      }
+toast.error('No winning bets this round')
     }
   }
 
@@ -414,13 +476,13 @@ export default function MainFeature() {
                     onClick={() => placeBet(bet.type, bet.value)}
                     disabled={isSpinning}
                     className={`${bet.color} text-white font-semibold py-3 px-4 rounded-lg border-2 border-transparent hover:border-accent transition-all duration-200 relative`}
-                  >
-                    {bet.label}
+{bet.label}
                     <AnimatePresence>
-{hasBet && (
+                      {hasBet && (
                         <motion.div
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
+                          className="absolute -top-2 -right-2 w-6 h-6 bg-accent text-black text-xs font-bold rounded-full flex items-center justify-center animate-chip-stack"
                           className="absolute -top-2 -right-2 w-6 h-6 bg-accent text-black text-xs font-bold rounded-full flex items-center justify-center animate-chip-stack"
                         >
                           ${hasBet.amount}
