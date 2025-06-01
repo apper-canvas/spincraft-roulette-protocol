@@ -3,15 +3,10 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  
   body {
     @apply bg-surface-900 text-white antialiased;
     font-family: 'Inter', ui-sans-serif, system-ui;
   }
-  
   html {
     scroll-behavior: smooth;
   }
@@ -109,6 +104,6 @@
   }
   
   .animate-winner-glow {
-    @apply animate-winner-glow;
+@apply animate-winner-glow;
   }
 }
