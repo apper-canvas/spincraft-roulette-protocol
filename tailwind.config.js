@@ -53,10 +53,10 @@ export default {
       borderRadius: {
         'xl': '0.75rem',
         '2xl': '1rem'
-      },
+},
 animation: {
-        'spin-roulette': 'spin 4s cubic-bezier(0.17, 0.67, 0.12, 0.99) forwards',
-        'ball-spin': 'ballSpin 4s cubic-bezier(0.17, 0.67, 0.12, 0.99) forwards',
+        'spin-roulette': 'spin 15s cubic-bezier(0.17, 0.67, 0.12, 0.99) forwards',
+        'ball-spin': 'ballSpin 15s cubic-bezier(0.17, 0.67, 0.12, 0.99) forwards',
         'chip-place': 'chipPlace 0.3s ease-out',
         'winner-glow': 'winnerGlow 0.8s ease-in-out infinite alternate',
         'particle-burst': 'particleBurst 2s ease-out forwards',

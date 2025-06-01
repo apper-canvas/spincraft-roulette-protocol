@@ -315,10 +315,9 @@ console.log('Could not play lose sound:', error)
               style={{ 
                 top: '20px', 
                 left: '50%', 
-                marginLeft: '-8px',
-                rotate: isSpinning ? wheelRotation * -1.5 : 0
+rotate: isSpinning ? wheelRotation * -1.5 : 0
               }}
-              transition={{ duration: 4, ease: "cubicBezier(0.17, 0.67, 0.12, 0.99)" }}
+              transition={{ duration: 15, ease: "cubicBezier(0.17, 0.67, 0.12, 0.99)" }}
             />
             
             {/* Center hub */}
