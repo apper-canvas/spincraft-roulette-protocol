@@ -312,14 +312,13 @@ console.log('Could not play lose sound:', error)
             {/* Ball */}
             <motion.div 
               className="absolute w-4 h-4 bg-white rounded-full shadow-lg"
-              style={{ 
+style={{ 
                 top: '20px', 
                 left: '50%', 
-rotate: isSpinning ? wheelRotation * -1.5 : 0
+                rotate: isSpinning ? wheelRotation * -1.5 : 0
               }}
-              transition={{ duration: 15, ease: "cubicBezier(0.17, 0.67, 0.12, 0.99)" }}
+              transition={{ duration: 3, ease: "cubicBezier(0.17, 0.67, 0.12, 0.99)" }}
             />
-            
             {/* Center hub */}
             <div className="absolute w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center">
               <ApperIcon name="Target" className="w-8 h-8 text-white" />
