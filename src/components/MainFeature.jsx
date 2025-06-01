@@ -5,6 +5,7 @@ import { Howl } from 'howler'
 import ApperIcon from './ApperIcon'
 
 // Sound effects using data URLs for immediate functionality
+// Sound effects using data URLs for immediate functionality
 const sounds = {
   wheelSpin: new Howl({
     src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz'],
@@ -12,26 +13,27 @@ const sounds = {
     onloaderror: () => console.log('Wheel spin sound failed to load')
   }),
   ballLand: new Howl({
-    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz] }]',
+    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz'],
     volume: 0.5,
     onloaderror: () => console.log('Ball land sound failed to load')
   }),
   chipPlace: new Howl({
-    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz] }]',
+    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz'],
     volume: 0.4,
     onloaderror: () => console.log('Chip place sound failed to load')
   }),
   win: new Howl({
-    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz] }]',
+    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz'],
     volume: 0.6,
     onloaderror: () => console.log('Win sound failed to load')
   }),
   lose: new Howl({
-    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz] }]',
-    volume: 0.4,
+    src: ['data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmcfGjiEzPLNeSMFl2O+9NiLOwYZcrfz'],
+volume: 0.4,
     onloaderror: () => console.log('Lose sound failed to load')
   })
 }
+
 const ROULETTE_NUMBERS = [
   { number: 0, color: 'green' },
   { number: 32, color: 'red' }, { number: 15, color: 'black' }, { number: 19, color: 'red' },
@@ -202,9 +204,8 @@ const spinWheel = () => {
       color: winner.color,
       totalBet,
       totalWon: totalWinnings,
-      timestamp: new Date()
+timestamp: new Date()
     }])
-}])
 
     // Clear bets
     setBets({})
@@ -221,9 +222,9 @@ const spinWheel = () => {
       try {
         sounds.lose.play()
       } catch (error) {
-        console.log('Could not play lose sound:', error)
+console.log('Could not play lose sound:', error)
       }
-toast.error('No winning bets this round')
+      toast.error('No winning bets this round')
     }
   }
 
@@ -473,23 +474,22 @@ toast.error('No winning bets this round')
                   <motion.button
                     key={betKey}
                     whileHover={{ scale: 1.05 }}
-                    onClick={() => placeBet(bet.type, bet.value)}
+onClick={() => placeBet(bet.type, bet.value)}
                     disabled={isSpinning}
                     className={`${bet.color} text-white font-semibold py-3 px-4 rounded-lg border-2 border-transparent hover:border-accent transition-all duration-200 relative`}
-{bet.label}
+                  >
+                    {bet.label}
                     <AnimatePresence>
                       {hasBet && (
                         <motion.div
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           className="absolute -top-2 -right-2 w-6 h-6 bg-accent text-black text-xs font-bold rounded-full flex items-center justify-center animate-chip-stack"
-                          className="absolute -top-2 -right-2 w-6 h-6 bg-accent text-black text-xs font-bold rounded-full flex items-center justify-center animate-chip-stack"
                         >
                           ${hasBet.amount}
                         </motion.div>
                       )}
                     </AnimatePresence>
-                  </motion.button>
                 )
               })}
             </div>
