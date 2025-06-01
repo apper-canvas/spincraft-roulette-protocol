@@ -471,10 +471,10 @@ console.log('Could not play lose sound:', error)
                 const betKey = `${bet.type}-${bet.value}`
                 const hasBet = bets[betKey]
                 return (
-                  <motion.button
+<motion.button
                     key={betKey}
                     whileHover={{ scale: 1.05 }}
-onClick={() => placeBet(bet.type, bet.value)}
+                    onClick={() => placeBet(bet.type, bet.value)}
                     disabled={isSpinning}
                     className={`${bet.color} text-white font-semibold py-3 px-4 rounded-lg border-2 border-transparent hover:border-accent transition-all duration-200 relative`}
                   >
@@ -490,6 +490,7 @@ onClick={() => placeBet(bet.type, bet.value)}
                         </motion.div>
                       )}
                     </AnimatePresence>
+                  </motion.button>
                 )
               })}
             </div>
@@ -497,7 +498,7 @@ onClick={() => placeBet(bet.type, bet.value)}
 
           {/* Game History */}
           {gameHistory.length > 0 && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className="bg-surface-800/50 backdrop-blur-sm rounded-2xl p-6 border border-accent/20"
