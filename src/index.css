@@ -99,11 +99,7 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
   
-  .animate-chip-place {
+.animate-chip-place {
     @apply animate-chip-place;
-  }
-  
-  .animate-winner-glow {
-@apply animate-winner-glow;
   }
 }
