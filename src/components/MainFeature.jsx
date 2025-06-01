@@ -417,11 +417,11 @@ export default function MainFeature() {
                   >
                     {bet.label}
                     <AnimatePresence>
-                      {hasBet && (
+{hasBet && (
                         <motion.div
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
-                          className="absolute -top-2 -right-2 w-6 h-6 bg-accent text-black text-xs font-bold rounded-full flex items-center justify-center"
+                          className="absolute -top-2 -right-2 w-6 h-6 bg-accent text-black text-xs font-bold rounded-full flex items-center justify-center animate-chip-stack"
                         >
                           ${hasBet.amount}
                         </motion.div>

@@ -54,11 +54,17 @@ export default {
         'xl': '0.75rem',
         '2xl': '1rem'
       },
-      animation: {
+animation: {
         'spin-roulette': 'spin 4s cubic-bezier(0.17, 0.67, 0.12, 0.99) forwards',
         'ball-spin': 'ballSpin 4s cubic-bezier(0.17, 0.67, 0.12, 0.99) forwards',
         'chip-place': 'chipPlace 0.3s ease-out',
-        'winner-glow': 'winnerGlow 0.8s ease-in-out infinite alternate'
+        'winner-glow': 'winnerGlow 0.8s ease-in-out infinite alternate',
+        'particle-burst': 'particleBurst 2s ease-out forwards',
+        'ball-bounce': 'ballBounce 0.5s ease-out',
+        'chip-stack': 'chipStack 0.4s ease-out',
+        'celebration': 'celebration 3s ease-out forwards',
+        'sparkle': 'sparkle 1.5s ease-in-out infinite',
+        'wheel-highlight': 'wheelHighlight 0.6s ease-in-out'
       },
       keyframes: {
         chipPlace: {
@@ -69,6 +75,35 @@ export default {
         winnerGlow: {
           '0%': { boxShadow: '0 0 20px rgba(255, 215, 0, 0.6)' },
           '100%': { boxShadow: '0 0 40px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 215, 0, 0.8)' }
+        },
+        particleBurst: {
+          '0%': { transform: 'scale(0) rotate(0deg)', opacity: '1' },
+          '50%': { transform: 'scale(1.5) rotate(180deg)', opacity: '0.8' },
+          '100%': { transform: 'scale(3) rotate(360deg)', opacity: '0' }
+        },
+        ballBounce: {
+          '0%': { transform: 'translateY(0) scale(1)' },
+          '50%': { transform: 'translateY(-10px) scale(1.2)' },
+          '100%': { transform: 'translateY(0) scale(1)' }
+        },
+        chipStack: {
+          '0%': { transform: 'translateY(-20px) scale(0.8)', opacity: '0' },
+          '100%': { transform: 'translateY(0) scale(1)', opacity: '1' }
+        },
+        celebration: {
+          '0%': { transform: 'scale(1) rotate(0deg)', filter: 'brightness(1)' },
+          '25%': { transform: 'scale(1.1) rotate(5deg)', filter: 'brightness(1.3)' },
+          '50%': { transform: 'scale(1.05) rotate(-3deg)', filter: 'brightness(1.5)' },
+          '75%': { transform: 'scale(1.08) rotate(2deg)', filter: 'brightness(1.2)' },
+          '100%': { transform: 'scale(1) rotate(0deg)', filter: 'brightness(1)' }
+        },
+        sparkle: {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.3', transform: 'scale(1.2)' }
+        },
+        wheelHighlight: {
+          '0%': { boxShadow: '0 0 50px rgba(255, 215, 0, 0.3)' },
+          '100%': { boxShadow: '0 0 100px rgba(255, 215, 0, 0.8), inset 0 0 50px rgba(255, 215, 0, 0.2)' }
         }
       }
     }
