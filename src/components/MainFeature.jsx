@@ -137,10 +137,10 @@ const spinWheel = () => {
         console.log('Could not play ball land sound:', error)
       }
       
-      setWinningNumber(winner)
+setWinningNumber(winner)
       calculateWinnings(winner)
-setIsSpinning(false)
-    }, 15000)
+      setIsSpinning(false)
+    }, 8000)
   }
 
   const calculateWinnings = (winner) => {

@@ -67,22 +67,22 @@ animation: {
         'wheel-highlight': 'wheelHighlight 0.6s ease-in-out'
       },
 },
-      keyframes: {
+keyframes: {
         wheelSpinRealistic: {
           '0%': { transform: 'rotate(0deg)' },
-          '20%': { transform: 'rotate(720deg)' },
-          '40%': { transform: 'rotate(1440deg)' },
+          '20%': { transform: 'rotate(900deg)' },
+          '40%': { transform: 'rotate(1620deg)' },
           '60%': { transform: 'rotate(2160deg)' },
-          '80%': { transform: 'rotate(2700deg)' },
-          '100%': { transform: 'rotate(3240deg)' }
+          '80%': { transform: 'rotate(2520deg)' },
+          '100%': { transform: 'rotate(2880deg)' }
         },
         ballCounterSpin: {
           '0%': { transform: 'rotate(0deg)' },
-          '20%': { transform: 'rotate(-1080deg)' },
-          '40%': { transform: 'rotate(-2160deg)' },
-          '60%': { transform: 'rotate(-3240deg)' },
-          '80%': { transform: 'rotate(-4050deg)' },
-          '100%': { transform: 'rotate(-4860deg)' }
+          '20%': { transform: 'rotate(-900deg)' },
+          '40%': { transform: 'rotate(-1620deg)' },
+          '60%': { transform: 'rotate(-2160deg)' },
+          '80%': { transform: 'rotate(-2520deg)' },
+          '100%': { transform: 'rotate(-2880deg)' }
         },
         chipPlace: {
           '0%': { transform: 'scale(0) rotate(180deg)', opacity: '0' },
