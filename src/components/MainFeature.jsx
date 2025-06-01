@@ -139,8 +139,8 @@ const spinWheel = () => {
       
       setWinningNumber(winner)
       calculateWinnings(winner)
-      setIsSpinning(false)
-    }, 4000)
+setIsSpinning(false)
+    }, 15000)
   }
 
   const calculateWinnings = (winner) => {

@@ -66,7 +66,24 @@ animation: {
         'sparkle': 'sparkle 1.5s ease-in-out infinite',
         'wheel-highlight': 'wheelHighlight 0.6s ease-in-out'
       },
+},
       keyframes: {
+        wheelSpinRealistic: {
+          '0%': { transform: 'rotate(0deg)' },
+          '20%': { transform: 'rotate(720deg)' },
+          '40%': { transform: 'rotate(1440deg)' },
+          '60%': { transform: 'rotate(2160deg)' },
+          '80%': { transform: 'rotate(2700deg)' },
+          '100%': { transform: 'rotate(3240deg)' }
+        },
+        ballCounterSpin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '20%': { transform: 'rotate(-1080deg)' },
+          '40%': { transform: 'rotate(-2160deg)' },
+          '60%': { transform: 'rotate(-3240deg)' },
+          '80%': { transform: 'rotate(-4050deg)' },
+          '100%': { transform: 'rotate(-4860deg)' }
+        },
         chipPlace: {
           '0%': { transform: 'scale(0) rotate(180deg)', opacity: '0' },
           '50%': { transform: 'scale(1.2) rotate(90deg)', opacity: '0.8' },
@@ -80,6 +97,12 @@ animation: {
           '0%': { transform: 'scale(0) rotate(0deg)', opacity: '1' },
           '50%': { transform: 'scale(1.5) rotate(180deg)', opacity: '0.8' },
           '100%': { transform: 'scale(3) rotate(360deg)', opacity: '0' }
+        },
+        particleExplosion: {
+          '0%': { transform: 'scale(0) rotate(0deg)', opacity: '1', filter: 'brightness(1)' },
+          '30%': { transform: 'scale(2) rotate(180deg)', opacity: '0.9', filter: 'brightness(2)' },
+          '60%': { transform: 'scale(4) rotate(360deg)', opacity: '0.6', filter: 'brightness(1.5)' },
+          '100%': { transform: 'scale(6) rotate(540deg)', opacity: '0', filter: 'brightness(1)' }
         },
         ballBounce: {
           '0%': { transform: 'translateY(0) scale(1)' },
@@ -97,6 +120,15 @@ animation: {
           '75%': { transform: 'scale(1.08) rotate(2deg)', filter: 'brightness(1.2)' },
           '100%': { transform: 'scale(1) rotate(0deg)', filter: 'brightness(1)' }
         },
+        winningCelebration: {
+          '0%': { transform: 'scale(1) rotate(0deg)', filter: 'brightness(1) saturate(1)' },
+          '15%': { transform: 'scale(1.15) rotate(3deg)', filter: 'brightness(1.4) saturate(1.3)' },
+          '30%': { transform: 'scale(1.1) rotate(-2deg)', filter: 'brightness(1.6) saturate(1.5)' },
+          '45%': { transform: 'scale(1.12) rotate(1deg)', filter: 'brightness(1.3) saturate(1.2)' },
+          '60%': { transform: 'scale(1.08) rotate(-1deg)', filter: 'brightness(1.5) saturate(1.4)' },
+          '75%': { transform: 'scale(1.05) rotate(0.5deg)', filter: 'brightness(1.2) saturate(1.1)' },
+          '100%': { transform: 'scale(1) rotate(0deg)', filter: 'brightness(1) saturate(1)' }
+        },
         sparkle: {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
           '50%': { opacity: '0.3', transform: 'scale(1.2)' }
@@ -104,8 +136,16 @@ animation: {
         wheelHighlight: {
           '0%': { boxShadow: '0 0 50px rgba(255, 215, 0, 0.3)' },
           '100%': { boxShadow: '0 0 100px rgba(255, 215, 0, 0.8), inset 0 0 50px rgba(255, 215, 0, 0.2)' }
+        },
+        glowPulse: {
+          '0%, 100%': { boxShadow: '0 0 30px rgba(255, 215, 0, 0.4)' },
+          '50%': { boxShadow: '0 0 60px rgba(255, 215, 0, 0.8), 0 0 90px rgba(255, 215, 0, 0.4)' }
+        },
+        wheelGlow: {
+          '0%': { boxShadow: 'inset 0 0 30px rgba(0, 0, 0, 0.8), 0 0 50px rgba(255, 215, 0, 0.3)' },
+          '50%': { boxShadow: 'inset 0 0 50px rgba(255, 215, 0, 0.2), 0 0 100px rgba(255, 215, 0, 0.6)' },
+          '100%': { boxShadow: 'inset 0 0 30px rgba(0, 0, 0, 0.8), 0 0 50px rgba(255, 215, 0, 0.3)' }
         }
-      }
     }
   },
   plugins: [],
