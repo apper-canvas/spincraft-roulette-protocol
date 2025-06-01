@@ -1,0 +1,114 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-surface-900 text-white antialiased;
+    font-family: 'Inter', ui-sans-serif, system-ui;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .casino-felt {
+    @apply bg-gradient-to-br from-casino-felt to-secondary-dark;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(196, 30, 58, 0.1) 0%, transparent 50%);
+  }
+  
+  .chip-shadow {
+    @apply shadow-lg;
+    box-shadow: 
+      0 4px 8px rgba(0, 0, 0, 0.3),
+      inset 0 2px 4px rgba(255, 255, 255, 0.2),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .roulette-number {
+    @apply flex items-center justify-center text-white font-bold text-sm sm:text-base transition-all duration-200 cursor-pointer relative overflow-hidden;
+    min-height: 2.5rem;
+  }
+  
+  .roulette-number:hover {
+    @apply transform scale-105 z-10;
+  }
+  
+  .roulette-number.red {
+    @apply bg-casino-red border-casino-red;
+  }
+  
+  .roulette-number.black {
+    @apply bg-casino-black border-casino-black;
+  }
+  
+  .roulette-number.green {
+    @apply bg-casino-green border-casino-green;
+  }
+  
+  .wheel-container {
+    @apply relative rounded-full;
+    background: conic-gradient(
+      from 0deg,
+      #c41e3a 0deg 9.73deg,
+      #1a1a1a 9.73deg 19.46deg,
+      #c41e3a 19.46deg 29.19deg,
+      #1a1a1a 29.19deg 38.92deg,
+      #c41e3a 38.92deg 48.65deg,
+      #1a1a1a 48.65deg 58.38deg,
+      #c41e3a 58.38deg 68.11deg,
+      #1a1a1a 68.11deg 77.84deg,
+      #c41e3a 77.84deg 87.57deg,
+      #1a1a1a 87.57deg 97.3deg,
+      #1a5d1a 97.3deg 107.03deg,
+      #c41e3a 107.03deg 116.76deg,
+      #1a1a1a 116.76deg 126.49deg,
+      #c41e3a 126.49deg 136.22deg,
+      #1a1a1a 136.22deg 145.95deg,
+      #c41e3a 145.95deg 155.68deg,
+      #1a1a1a 155.68deg 165.41deg,
+      #c41e3a 165.41deg 175.14deg,
+      #1a1a1a 175.14deg 184.87deg,
+      #c41e3a 184.87deg 194.6deg,
+      #1a1a1a 194.6deg 204.33deg,
+      #c41e3a 204.33deg 214.06deg,
+      #1a1a1a 214.06deg 223.79deg,
+      #c41e3a 223.79deg 233.52deg,
+      #1a1a1a 233.52deg 243.25deg,
+      #c41e3a 243.25deg 252.98deg,
+      #1a1a1a 252.98deg 262.71deg,
+      #c41e3a 262.71deg 272.44deg,
+      #1a1a1a 272.44deg 282.17deg,
+      #c41e3a 282.17deg 291.9deg,
+      #1a1a1a 291.9deg 301.63deg,
+      #c41e3a 301.63deg 311.36deg,
+      #1a1a1a 311.36deg 321.09deg,
+      #c41e3a 321.09deg 330.82deg,
+      #1a1a1a 330.82deg 340.55deg,
+      #c41e3a 340.55deg 350.28deg,
+      #1a1a1a 350.28deg 360deg
+    );
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animate-chip-place {
+    @apply animate-chip-place;
+  }
+  
+  .animate-winner-glow {
+    @apply animate-winner-glow;
+  }
+}
